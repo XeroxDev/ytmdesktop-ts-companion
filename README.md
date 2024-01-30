@@ -8,7 +8,7 @@ npm install --save <replace-later>
 ```
 
 ## Usage
-Can be easier seen in the [example file](./example/index.ts) but here's a quick rundown:
+Can be easier seen in the [example file](https://github.com/XeroxDev/ytmdesktop-ts-companion/blob/main/example/index.ts) but here's a quick rundown:
 ```typescript
 // import the library
 import {CompanionConnector} from "../src"; // Note that this path is different for you
