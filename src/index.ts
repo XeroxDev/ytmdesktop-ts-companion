@@ -1,0 +1,47 @@
+import {LikeStatus, RepeatMode, SocketState, TrackState} from "./enums";
+import {
+    CommandInput,
+    ErrorOutput,
+    GenericClient,
+    MetadataOutput,
+    Player,
+    PlaylistOutput,
+    Queue,
+    QueueItem,
+    RequestCodeInput,
+    RequestCodeOutput,
+    RequestInput,
+    RequestOutput,
+    StateOutput,
+    Thumbnail,
+    Video,
+} from "./interfaces";
+import {CompanionConnector} from "./companion-connector";
+import {Endpoints, RestClient, Settings, SocketClient} from "./shared";
+
+export {
+    CompanionConnector,
+    LikeStatus,
+    RepeatMode,
+    TrackState,
+    SocketState,
+    Endpoints,
+    Settings,
+    RestClient,
+    SocketClient,
+    RequestOutput,
+    RequestCodeOutput,
+    ErrorOutput,
+    MetadataOutput,
+    PlaylistOutput,
+    StateOutput,
+    RequestInput,
+    RequestCodeInput,
+    CommandInput,
+    GenericClient,
+    Player,
+    Queue,
+    QueueItem,
+    Video,
+    Thumbnail,
+}
