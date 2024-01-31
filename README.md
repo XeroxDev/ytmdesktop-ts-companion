@@ -8,7 +8,7 @@ authorization and so on.
 - Install via [`npm`](https://www.npmjs.com/):
 
 ```bash
-npm install --save <replace-later>
+npm install --save ytmdesktop-ts-companion
 ```
 
 ## Usage

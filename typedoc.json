@@ -1,6 +1,5 @@
 {
   "excludePrivate": true,
   "excludeInternal": true,
-  "includeVersion": true,
-  "listInvalidSymbolLinks": true
+  "includeVersion": true
 }
