@@ -24,7 +24,12 @@ jobs:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
+      - run: |
+          if [ -e package-lock.json ]; then
+            npm ci
+          else
+            npm i
+          fi
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
