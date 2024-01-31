@@ -1,14 +1,21 @@
 # YTMDesktop TypeScript Companion
-This is a library for the YTMDesktop Companion Server which lets you easier communicate with the server and handle authorization and so on.
+
+This is a library for the YTMDesktop Companion Server which lets you easier communicate with the server and handle
+authorization and so on.
 
 ## Installation
+
 - Install via [`npm`](https://www.npmjs.com/):
+
 ```bash
 npm install --save <replace-later>
 ```
 
 ## Usage
-Can be easier seen in the [example file](https://github.com/XeroxDev/ytmdesktop-ts-companion/blob/main/example/index.ts) but here's a quick rundown:
+
+Can be easier seen in the [example file](https://github.com/XeroxDev/ytmdesktop-ts-companion/blob/main/example/index.ts)
+but here's a quick rundown:
+
 ```typescript
 // import the library
 import {CompanionConnector} from "../src"; // Note that this path is different for you
@@ -48,9 +55,9 @@ socketClient.connect();
 ```
 
 ## How to contribute?
-Just fork the repository and create PR's, but we use
-[standard-version](https://github.com/conventional-changelog/standard-version) to optimal release the plugin.
 
-standard-version is following the [conventionalcommits](https://www.conventionalcommits.org) specification which follows
-the
-[angular commit guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
+Just fork the repository and create PR's.
+
+> [!NOTE]
+> We're using [release-please](https://github.com/googleapis/release-please) to optimal release the plugin.
+> release-please is following the [conventionalcommits](https://www.conventionalcommits.org) specification.
