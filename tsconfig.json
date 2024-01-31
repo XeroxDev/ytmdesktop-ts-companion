@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "Node16",
+    "module": "CommonJS",
     "noImplicitAny": true,
     "outDir": "./dist",
     "preserveConstEnums": true,
@@ -12,10 +12,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strictPropertyInitialization": false,
-    "target": "ES2022",
-    "lib": [
-      "ES2023"
-    ]
+    "target": "ES6"
   },
   "include": [
     "src/**/*"
