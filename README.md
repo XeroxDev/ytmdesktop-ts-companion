@@ -14,6 +14,7 @@ npm install --save ytmdesktop-ts-companion
 ## Usage
 
 Can be easier seen in the [example file](https://github.com/XeroxDev/ytmdesktop-ts-companion/blob/main/example/index.ts)
+Also you can look through the [documentation](https://xeroxdev.github.io/ytmdesktop-ts-companion/)
 but here's a quick rundown:
 
 ```typescript
