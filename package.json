@@ -2,21 +2,10 @@
   "name": "ytmdesktop-ts-companion",
   "version": "1.0.1",
   "description": "This library will help you communicate with the YTMDesktop Companion Server.",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "release": "standard-version --sign --commit-all",
-    "documentation": "typedoc src/index.ts",
-    "run": "ts-node src/index.ts",
-    "example": "ts-node example/index.ts"
-  },
-  "keywords": [
-    "YTMDesktop",
-    "TypeScript",
-    "Companion Server",
-    "Library"
-  ],
+  "homepage": "https://github.com/XeroxDev/ytmdesktop-ts-companion",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": {
     "email": "help@xeroxdev.de",
     "name": "Dominic 'XeroxDev' Ris",
@@ -30,19 +19,25 @@
     "type": "git",
     "url": "https://github.com/XeroxDev/ytmdesktop-ts-companion.git"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "keywords": [
+    "YTMDesktop",
+    "TypeScript",
+    "Companion Server",
+    "Library"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "release": "standard-version --sign --commit-all",
+    "documentation": "typedoc src/index.ts",
+    "run": "ts-node src/index.ts",
+    "example": "ts-node example/index.ts"
   },
-  "license": "MIT",
   "private": false,
   "devDependencies": {
     "@commitlint/cli": "^18.6.0",
     "@commitlint/config-angular": "^18.6.0",
     "@tsconfig/recommended": "^1.0.3",
     "@types/node": "^20.11.10",
-    "husky": "^9.0.6",
     "ts-node": "^10.9.2",
     "typedoc": "^0.25.7",
     "typescript": "^5.3.3"
