@@ -1,6 +1,6 @@
 {
   "name": "ytmdesktop-ts-companion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This library will help you communicate with the YTMDesktop Companion Server.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
