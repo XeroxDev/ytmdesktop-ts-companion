@@ -29,12 +29,12 @@ export interface Queue {
 
 export interface QueueItem {
     thumbnails: Thumbnail[];
-    "title": string;
-    "author": string;
-    "duration": string;
-    "selected": boolean;
-    "videoId": string;
-    "counterparts": QueueItem[] | null;
+    title: string;
+    author: string;
+    duration: string;
+    selected: boolean;
+    videoId: string;
+    counterparts: QueueItem[] | null;
 }
 
 export interface Video {
@@ -43,10 +43,10 @@ export interface Video {
     title: string;
     album: string;
     albumId: string;
-    "likeStatus": LikeStatus;
-    "thumbnails": Thumbnail[];
-    "durationSeconds": number;
-    "id": string;
+    likeStatus: LikeStatus;
+    thumbnails: Thumbnail[];
+    durationSeconds: number;
+    id: string;
 }
 
 export interface Thumbnail {
