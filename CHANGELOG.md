@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.1...v1.0.2) (2024-02-02)
+
+
+### Bug Fixes
+
+* direct imports / declarations not working as expected ([039edc9](https://github.com/XeroxDev/ytmdesktop-ts-companion/commit/039edc90ab309adcc2ae8ac82c7cb9b44703dbc5))
+
 ## [1.0.1](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.0...v1.0.1) (2024-02-02)
 
 
