@@ -18,7 +18,7 @@ but here's a quick rundown:
 
 ```typescript
 // import the library
-import {CompanionConnector} from "../src"; // Note that this path is different for you
+import {CompanionConnector} from "ytmdesktop-ts-companion";
 
 // Define settings (add token if you have one, see bigger example for how this could be done)
 const settings: Settings = {
@@ -59,5 +59,5 @@ socketClient.connect();
 Just fork the repository and create PR's.
 
 > [!NOTE]
-> We're using [release-please](https://github.com/googleapis/release-please) to optimal release the plugin.
+> We're using [release-please](https://github.com/googleapis/release-please) to optimal release the library.
 > release-please is following the [conventionalcommits](https://www.conventionalcommits.org) specification.
