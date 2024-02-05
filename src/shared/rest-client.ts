@@ -2,7 +2,8 @@ import {Settings} from "./settings";
 import {Endpoints} from "./endpoints";
 import {
     CommandInput,
-    ErrorOutput, GenericClient,
+    ErrorOutput,
+    GenericClient,
     MetadataOutput,
     PlaylistOutput,
     RequestCodeInput,
@@ -277,8 +278,14 @@ export class RestClient implements GenericClient {
             } as ErrorOutput;
         }
 
-        const data: T | ErrorOutput = await response.json() as T | ErrorOutput;
-
+        let data: T | ErrorOutput;
+        try {
+            data = await response.json() as T | ErrorOutput;
+        } catch (error) {
+            // This is probably a 204 No Content response
+            return undefined as T;
+        }
+1
         if (this.isErrorResponse(data)) {
             throw data;
         }
