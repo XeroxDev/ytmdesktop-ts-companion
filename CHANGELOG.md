@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.2...v1.0.3) (2024-02-05)
+
+
+### Bug Fixes
+
+* status code 204 throws exceptions ([#10](https://github.com/XeroxDev/ytmdesktop-ts-companion/issues/10)) ([ca330e7](https://github.com/XeroxDev/ytmdesktop-ts-companion/commit/ca330e78483988a71bb4e67fb3ece12317ff1796))
+
 ## [1.0.2](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.1...v1.0.2) (2024-02-02)
 
 
