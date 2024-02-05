@@ -81,6 +81,20 @@ import {CompanionConnector} from "../src";
         process.exit(1);
     }));
 
+    // Toggle play/pause (also works with playPause())
+    await restClient.pause().catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
+
+    // Wait for 2 seconds
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    await restClient.play().catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
+
     // Connect to socket server so it can send us events
     socketClient.connect();
 
