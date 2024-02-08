@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.3...v1.0.4) (2024-02-08)
+
+
+### Bug Fixes
+
+* add side-effects notations ([2e5b294](https://github.com/XeroxDev/ytmdesktop-ts-companion/commit/2e5b294d25fbb923a79ae3262dc9ec4b6e223b81))
+* make library less confusing ([#12](https://github.com/XeroxDev/ytmdesktop-ts-companion/issues/12)) ([2e5b294](https://github.com/XeroxDev/ytmdesktop-ts-companion/commit/2e5b294d25fbb923a79ae3262dc9ec4b6e223b81))
+
 ## [1.0.3](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.2...v1.0.3) (2024-02-05)
 
 
