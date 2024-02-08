@@ -25,13 +25,19 @@ import {CompanionConnector} from "ytmdesktop-ts-companion";
 const settings: Settings = {
     host: "127.0.0.1",
     port: 9863,
-    appId: "some-random_test-app",
-    appName: "Companion Test",
+    appId: "ytmdesktop-ts-companion-example",
+    appName: "YTMDesktop TS Companion Example",
     appVersion: version
 }
 
 // Create a new connector
-const connector = new CompanionConnector(settings);
+let connector: CompanionConnector;
+try {
+    connector = new CompanionConnector(settings);
+} catch (error) {
+    console.error(error);
+    process.exit(1);
+}
 
 // define clients for easier access
 const restClient = connector.restClient;
@@ -40,13 +46,21 @@ const socketClient = connector.socketClient;
 // register state listener and log it
 socketClient.addStateListener(state => console.log("YTMDesktop State changed: ", state));
 
-// get token
-const codeResponse = await restClient.requestCode();
-console.log("Got new code, please compare it with the code from YTMDesktop: " + codeResponse.code);
+try {
+    // if not, try to request one and show it to user.
+    const codeResponse = await restClient.getAuthCode();
+    console.log("Got new code, please compare it with the code from YTMDesktop: " + codeResponse.code);
 
-// Request access top YTMDesktop, so it shows the popup to the user.
-const tokenResponse = await restClient.request(codeResponse.code);
-const token = tokenResponse.token;
+    // Request access top YTMDesktop, so it shows the popup to the user.
+    const tokenResponse = await restClient.getAuthToken(codeResponse.code);
+    token = tokenResponse.token;
+
+    // set token via connector, so it automatically sets it in both clients.
+    connector.setAuthToken(token);
+} catch (error) {
+    console.error(error);
+    process.exit(1);
+}
 
 // toggle current track
 await socketClient.playPause();
