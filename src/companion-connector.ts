@@ -54,4 +54,16 @@ export class CompanionConnector {
         this._restClient.settings = value;
         this._socketClient.settings = value;
     }
+
+    /**
+     * Set the authentication token, so it can be used for further requests.
+     * This automatically sets the token for both clients and reconnects the socket client if the token changed.
+     * @param {string} token - The token to set
+     */
+    public setAuthToken(token: string): void {
+        this.settings = {
+            ...this.settings,
+            token
+        }
+    }
 }

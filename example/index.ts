@@ -1,7 +1,6 @@
 import path from "path";
 import fs from "fs";
-import {Settings} from "../src/shared";
-import {CompanionConnector} from "../src";
+import {CompanionConnector, Settings} from "../src"; // This will be `import {CompanionConnector, Settings} from "ytmdesktop-ts-companion";` in your code
 
 (async () => {
     // get version from package.json
@@ -24,8 +23,8 @@ import {CompanionConnector} from "../src";
     const settings: Settings = {
         host: "127.0.0.1",
         port: 9863,
-        appId: "some-random_test-app",
-        appName: "Companion Test",
+        appId: "ytmdesktop-ts-companion-example",
+        appName: "YTMDesktop TS Companion Example",
         appVersion: version
     }
 
@@ -59,12 +58,15 @@ import {CompanionConnector} from "../src";
     if (!token) {
         try {
             // if not, try to request one and show it to user.
-            const codeResponse = await restClient.requestCode();
+            const codeResponse = await restClient.getAuthCode();
             console.log("Got new code, please compare it with the code from YTMDesktop: " + codeResponse.code);
 
             // Request access top YTMDesktop, so it shows the popup to the user.
-            const tokenResponse = await restClient.request(codeResponse.code);
+            const tokenResponse = await restClient.getAuthToken(codeResponse.code);
             token = tokenResponse.token;
+
+            // set token via connector, so it automatically sets it in both clients.
+            connector.setAuthToken(token);
         } catch (error) {
             console.error(error);
             process.exit(1);
