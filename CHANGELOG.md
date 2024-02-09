@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.4...v1.0.5) (2024-02-09)
+
+
+### Bug Fixes
+
+* add comments to compiled code ([4fe53ee](https://github.com/XeroxDev/ytmdesktop-ts-companion/commit/4fe53ee33c1f6c9fd483034a21bd894a73a71f88))
+
 ## [1.0.4](https://github.com/XeroxDev/ytmdesktop-ts-companion/compare/v1.0.3...v1.0.4) (2024-02-08)
 
 
