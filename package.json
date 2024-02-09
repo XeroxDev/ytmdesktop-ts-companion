@@ -1,6 +1,6 @@
 {
   "name": "ytmdesktop-ts-companion",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This library will help you communicate with the YTMDesktop Companion Server.",
   "homepage": "https://github.com/XeroxDev/ytmdesktop-ts-companion",
   "license": "MIT",
