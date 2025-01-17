@@ -6,7 +6,7 @@ import {LikeStatus, RepeatMode, TrackState} from "../../../enums"
 export interface StateOutput {
     player: Player
     video: Video | null
-    playlistId: string
+    playlistId: string | null
 }
 
 export interface Player {

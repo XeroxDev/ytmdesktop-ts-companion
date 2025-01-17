@@ -62,8 +62,8 @@ try {
     process.exit(1);
 }
 
-// toggle current track
-await socketClient.playPause();
+// change track
+await restClient.changeVideo({videoId: "xvFZjo5PgG0"});
 
 // connect to the server to receive events
 socketClient.connect();

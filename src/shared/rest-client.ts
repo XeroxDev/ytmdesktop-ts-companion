@@ -1,18 +1,8 @@
 import {Settings} from "./settings";
 import {Endpoints} from "./endpoints";
-import {
-    CommandInput,
-    ErrorOutput,
-    GenericClient,
-    MetadataOutput,
-    PlaylistOutput,
-    RequestCodeInput,
-    RequestCodeOutput,
-    RequestInput,
-    RequestOutput,
-    StateOutput
-} from "../interfaces";
+import {CommandInput, ErrorOutput, GenericClient, MetadataOutput, PlaylistOutput, RequestCodeInput, RequestCodeOutput, RequestInput, RequestOutput, StateOutput} from "../interfaces";
 import {RepeatMode} from "../enums";
+import {ChangeVideoInput} from "../interfaces/endpoints/input";
 
 /**
  * A REST client to communicate with the companion servers REST API
@@ -298,6 +288,42 @@ export class RestClient implements GenericClient {
      */
     public async toggleDislike(): Promise<void> {
         return await this.post<void, CommandInput>(Endpoints.COMMAND, {command: "toggleDislike"}, this.settings.token);
+    }
+
+    /**
+     * Immediately starts playing the specified video or playlist.
+     *
+     * **Important:** Either videoId or playlistId or both have to be set. You can also set an url instead. Url is prioritized over videoId and playlistId
+     *
+     * **Caution:** YouTube Music's UI will display a blank / broken player if both `videoId` and `playlistId` are provided but the video is not in the playlist or the playlist does not exist (anymore).
+     * @param {ChangeVideoInput} data - The data to change the video
+     * @throws {@link ErrorOutput} If something went wrong
+     * @return {Promise<void>}
+     */
+    public async changeVideo({videoId, playlistId, url}: ChangeVideoInput): Promise<void> {
+        const data: { videoId?: string, playlistId?: string } = {};
+        if (videoId) {
+            data.videoId = videoId;
+        }
+
+        if (playlistId) {
+            data.playlistId = playlistId;
+        }
+
+        if (url) {
+            const queries = new URL(url).searchParams;
+            data.videoId = queries.get("v") ?? undefined;
+            data.playlistId = queries.get("list") ?? undefined;
+        }
+
+        if (!data.videoId && !data.playlistId) {
+            throw {
+                statusCode: 400,
+                error: "Bad Request",
+                message: "One of videoId, playlistId, or both MUST be provided"
+            } as ErrorOutput;
+        }
+        return await this.post<void, CommandInput>(Endpoints.COMMAND, {command: "changeVideo", data}, this.settings.token);
     }
 
     /**

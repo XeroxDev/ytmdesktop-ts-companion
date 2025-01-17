@@ -97,9 +97,18 @@ import {CompanionConnector, Settings} from "../src"; // This will be `import {Co
         process.exit(1);
     });
 
+    // Wait for 2 seconds
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Change to another track
+    await restClient.changeVideo({videoId: "xvFZjo5PgG0"}).catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
+
     // Connect to socket server so it can send us events
     socketClient.connect();
-
 
     // keep the process running until it gets killed / ctrl-c / etc
     await new Promise(() => {
