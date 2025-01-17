@@ -27,7 +27,6 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "release": "standard-version --sign --commit-all",
     "documentation": "typedoc src/index.ts",
     "run": "ts-node src/index.ts",
     "example": "ts-node example/index.ts"
